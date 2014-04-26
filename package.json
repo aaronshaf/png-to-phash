@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aaronshaf/png-to-hash.git"
+  },
   "devDependencies": {
     "gm": "^1.14.2",
     "phash": "0.0.5",
