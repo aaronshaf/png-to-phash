@@ -8,10 +8,7 @@ var path = require('path')
 var async = require('async')
 
 var tmpDir = new tmp.Dir()
-
 var tasks = []
-
-var files = glob.sync('screenshots/**/*.png')
 
 function generateHash(file,callback) {
   var jpeg = path.join(tmpDir.path,uuid.v4() + '.jpg')
@@ -21,23 +18,28 @@ function generateHash(file,callback) {
       return callback(error)
     }
 
-    pHash.imageHash(jpeg,function(error, hash) {
+    pHash.imageHash(jpeg,function(error, phash) {
       fs.unlinkSync(jpeg)
       if(error) {
         return callback(error)
       }
-      callback(null,hash)
+      callback(null,{
+        file: file,
+        phash: phash
+      })
     })
   })
 }
 
-files.forEach(function(file) {
-  tasks.push(function(callback) {
-    generateHash(file,callback)
+module.exports = function (files,callback) {
+  files.forEach(function(file) {
+    tasks.push(function(callback) {
+      generateHash(file,callback)
+    })
   })
-})
 
-async.parallelLimit(tasks,5,function(error,results) {
-  dir.rmdir()
-  console.log(results)
-})
+  async.parallelLimit(tasks,5,function(error,results) {
+    tmpDir.rmdir()
+    callback(error,results)
+  })
+}
