@@ -1,6 +1,6 @@
 {
   "name": "png-to-phash",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate pHash from png",
   "main": "index.js",
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
