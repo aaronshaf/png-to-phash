@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git@github.com:aaronshaf/png-to-phash.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "gm": "^1.14.2",
     "phash": "0.0.5",
     "temporary": "0.0.8",
