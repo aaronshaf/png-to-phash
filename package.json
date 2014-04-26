@@ -1,13 +1,11 @@
 {
   "name": "png-to-phash",
   "version": "0.0.1",
-  "description": "Generate pHashes from pngs",
+  "description": "Generate pHash from png",
   "main": "index.js",
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "async": "^0.7.0",
-    "glob": "^3.2.9",
     "gm": "^1.14.2",
     "phash": "0.0.5",
     "temporary": "0.0.8",

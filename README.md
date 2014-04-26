@@ -1,4 +1,7 @@
-png-to-hash
-===========
+var pngToPhash = require('png-to-phash')
 
-Generate pHashes from pngs
+```javascript
+pngToPhash('test.png', function(error,phash) {
+  console.log(phash)
+})
+```
