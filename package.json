@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "gm": "^1.14.2",
-    "phash": "0.0.5",
+    "phash-image": "*",
     "temporary": "0.0.8",
     "uuid": "^1.4.1"
   }
