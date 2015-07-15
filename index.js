@@ -1,5 +1,5 @@
 var fs = require('fs')
-var pHash = require('phash')
+var pHash = require('phash-image')
 var tmp = require('temporary')
 var gm = require('gm')
 var uuid = require('uuid')
@@ -15,7 +15,7 @@ module.exports = function(file,callback) {
       return callback(error)
     }
 
-    pHash.imageHash(jpeg,function(error, phash) {
+    pHash(jpeg,function(error, phash) {
       fs.unlinkSync(jpeg)
       tmpDir.rmdir()
 
